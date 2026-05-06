@@ -8,7 +8,6 @@ workflows:
         script: | 
           xcode-project build-ipa \
             --project "ThemingExample.xcodeproj" \
-            --scheme "ThemingExample" \
-            --code-signing-method manual
+            --scheme "ThemingExample"
     artifacts:
       - build/ios/ipa/*.ipa
