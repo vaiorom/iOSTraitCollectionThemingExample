@@ -9,6 +9,6 @@ workflows:
           xcode-project build-ipa \
             --project "ThemingExample.xcodeproj" \
             --scheme "ThemingExample" \
-            --no-codesign
+            --code-signing-method manual
     artifacts:
       - build/ios/ipa/*.ipa
