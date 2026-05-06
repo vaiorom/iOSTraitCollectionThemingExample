@@ -1,0 +1,18 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Codemagic
+    publishing:
+      app_store_connect:
+        auth: integration
+    scripts:
+      - name: Build IPA
+        script: | 
+          xcode-project build-ipa \
+            --project "ThemingExample.xcodeproj" \
+            --scheme "ThemingExample"
+    artifacts:
+      - build/ios/ipa/*.ipa
